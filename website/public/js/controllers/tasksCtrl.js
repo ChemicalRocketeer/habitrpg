@@ -95,6 +95,11 @@ habitrpg.controller("TasksCtrl", ['$scope', '$rootScope', '$location', 'User','N
       if (!confirm(window.env.t('sureDelete'))) return;
       User.user.ops.deleteTask({params:{id:task.id}})
     };
+    
+    $scope.removeReward = function(task) {
+      if (!confirm(window.env.t('sureDeleteReward'))) return;
+      User.user.ops.deleteTask({params:{id:task.id}})
+    }
 
     $scope.saveTask = function(task, stayOpen, isSaveAndClose) {
       if (task.checklist)
